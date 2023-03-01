@@ -1,4 +1,5 @@
 
+
 const handleImage=(req, res,db)=>{
     const {id} = req.body;
     db('users').where('id', '=', id)
@@ -11,5 +12,6 @@ const handleImage=(req, res,db)=>{
 };
 
 module.exports={
-    handleImage
+    handleImage,
+   
 }
