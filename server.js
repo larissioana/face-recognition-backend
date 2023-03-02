@@ -12,8 +12,7 @@ const db=knex({
     client: 'pg',
 
     connection: {
-      host : '127.0.0.1',
-      port : 5432,
+      host : 'postgresql-sinuous-07294',
       user : 'larisaoltean',
       password:'',
       database : 'smart-app'
