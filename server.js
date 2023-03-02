@@ -12,17 +12,18 @@ const db=knex({
     client: 'pg',
 
     connection: {
-      host : 'postgresql-sinuous-07294',
-      user : 'larisaoltean',
-      password:'',
-      database : 'smart-app'
+      connectionString:process.env.DATABASE_URL,
+   
+      ssl:true,
     }
+   
     // connection: {
     //  connectionString: process.env.DATABASE_URL,
     //  ssl: true
     // }
+
   });
-console.log(DATABASE_URL)
+console.log(db.connectionString)
 const app=express();
 app.use(cors());
 app.use(express.json());
@@ -36,6 +37,6 @@ app.put('/image', (req,res)=>{image.handleImage(req,res,db)});
 app.post('/imageurl', (req,res)=>{image.handleApiCall(req,res)});
 
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log(`Server is listening on port ${process.env.PORT}`)
   });
