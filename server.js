@@ -17,7 +17,7 @@ const db=knex({
     }
 
   });
-console.log(DATABASE_URL)
+
 const app=express();
 app.use(cors());
 app.use(express.json());
