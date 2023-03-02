@@ -10,10 +10,8 @@ const image=require('./controllers/image');
 const db=knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-sinuous-07294',
-      user : 'larisaoltean',
-      password:'',
-      database : 'smart-app'
+     host:process.env.DATABASE_URL,
+     ssl:true,
     }
   });
 
