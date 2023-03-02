@@ -10,10 +10,10 @@ DATABASE_URL='postgres://ggkcmcgpuyoumc:04030a1a8490aa9f03235740d1b95ce057cb10cd
 
 const db=knex({
     client: 'pg',
-    connection: {
-     connectionString: process.env.DATABASE_URL,
-     ssl: true
-    }
+  
+    connection: process.env.DATABASE_URL,
+   
+    
   });
 console.log(DATABASE_URL)
 const app=express();
